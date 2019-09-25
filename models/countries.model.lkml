@@ -11,13 +11,20 @@ datagroup: countries_default_datagroup {
 persist_with: countries_default_datagroup
 
 explore: fv_countries {
-  label: "Countries Info"
+  label: "Countries"
+
+  join: fv_economies {
+    type: left_outer
+    sql_on: ${fv_countries.code} = ${fv_economies.code} ;;
+    relationship: one_to_one
+    }
+
 }
 
-explore: fv_economies {}
+# explore: fv_economies {}
 
-explore: fv_economies2010 {}
+# explore: fv_economies2010 {}
 
-explore: fv_economies2015 {}
+# explore: fv_economies2015 {}
 
-explore: fv_populations {}
+# explore: fv_populations {}

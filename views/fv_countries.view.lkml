@@ -26,12 +26,12 @@ view: fv_countries {
 #    sql: ${TABLE}._line ;;
 #  }
 
-  dimension: Capital_Latitude {
+  dimension: capital_latitude {
     type: number
     sql: ${TABLE}.cap_lat ;;
   }
 
-  dimension: cap_long {
+  dimension: capital_longitude {
     type: number
     sql: ${TABLE}.cap_long ;;
   }
