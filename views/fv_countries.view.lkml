@@ -1,5 +1,5 @@
 view: fv_countries {
-  label: "Countries Info"
+  label: "Countries Data"
   sql_table_name: fivetran_panoply_csv.fv_countries ;;
 
 #  dimension: _file {
