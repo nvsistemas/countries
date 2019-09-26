@@ -12,6 +12,12 @@ persist_with: countries_default_datagroup
 
 explore: fv_countries {
   label: "Countries"
+  always_filter: {
+    filters: {
+      field: year
+      value: "2015"
+    }
+  }
 
   join: fv_economies {
     type: left_outer
