@@ -14,7 +14,7 @@ explore: fv_countries {
   label: "Countries"
   always_filter: {
     filters: {
-      field: year
+      field: fv_economies.year
       value: "2015"
     }
   }

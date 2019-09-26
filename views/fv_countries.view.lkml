@@ -41,12 +41,13 @@ view: fv_countries {
     sql: ${TABLE}.capital ;;
   }
 
-  dimension: city_proper_pop {
-    type: number
-    sql: ${TABLE}.city_proper_pop ;;
-  }
+#  dimension: city_proper_pop {
+#    type: number
+#    sql: ${TABLE}.city_proper_pop ;;
+#  }
 
   dimension: code {
+    hidden: yes
     type: string
     sql: ${TABLE}.code ;;
   }
@@ -57,6 +58,7 @@ view: fv_countries {
   }
 
   dimension: country_code {
+    hidden: yes
     type: string
     sql: ${TABLE}.country_code ;;
   }
@@ -64,11 +66,6 @@ view: fv_countries {
   dimension: country_name {
     type: string
     sql: ${TABLE}.country_name ;;
-  }
-
-  dimension: fertility_rate {
-    type: number
-    sql: ${TABLE}.fertility_rate ;;
   }
 
   dimension: gov_form {
@@ -81,29 +78,9 @@ view: fv_countries {
     sql: ${TABLE}.indep_year ;;
   }
 
-  dimension: life_expectancy {
-    type: number
-    sql: ${TABLE}.life_expectancy ;;
-  }
-
   dimension: local_name {
     type: string
     sql: ${TABLE}.local_name ;;
-  }
-
-  dimension: metroarea_pop {
-    type: number
-    sql: ${TABLE}.metroarea_pop ;;
-  }
-
-  dimension: name {
-    type: string
-    sql: ${TABLE}.name ;;
-  }
-
-  dimension: pop_id {
-    type: number
-    sql: ${TABLE}.pop_id ;;
   }
 
   dimension: region {
@@ -121,18 +98,8 @@ view: fv_countries {
     sql: ${TABLE}.surface_area ;;
   }
 
-  dimension: urbanarea_pop {
-    type: number
-    sql: ${TABLE}.urbanarea_pop ;;
-  }
-
-  dimension: year {
-    type: number
-    sql: ${TABLE}.year ;;
-  }
-
   measure: count {
     type: count
-    drill_fields: [country_name, local_name, name]
+    drill_fields: [country_name]
   }
 }
