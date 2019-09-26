@@ -11,7 +11,7 @@ datagroup: countries_default_datagroup {
 persist_with: countries_default_datagroup
 
 explore: fv_countries {
-  label: "Countries"
+  label: "Países"
   always_filter: {
     filters: {
       field: fv_economies.year
@@ -24,13 +24,14 @@ explore: fv_countries {
   }
 
   join: fv_economies {
-    view_label: "Countries & Economies"
+    view_label: "Dados Econômicos"
     type: left_outer
     relationship: one_to_one
     sql_on: ${fv_countries.code} = ${fv_economies.code} ;;
         }
 
   join: fv_populations {
+    view_label: "Dados Populacionais"
     type: left_outer
     relationship: one_to_one
     sql_on: ${fv_countries.code} = ${fv_populations.country_code} ;;
