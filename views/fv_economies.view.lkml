@@ -1,4 +1,5 @@
 view: fv_economies {
+  label: "Economies Data"
   sql_table_name: fivetran_panoply_csv.fv_economies ;;
 
   dimension: _file {
@@ -83,5 +84,10 @@ view: fv_economies {
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: Total_GDP_percapita{
+    type: sum
+    sql: ${gdp_percapita} ;;
   }
 }
