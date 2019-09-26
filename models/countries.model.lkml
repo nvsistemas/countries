@@ -17,6 +17,10 @@ explore: fv_countries {
       field: fv_economies.year
       value: "2015"
     }
+    filters: {
+      field: fv_populations.year
+      value: "2015"
+    }
   }
 
   join: fv_economies {
