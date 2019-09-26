@@ -93,7 +93,7 @@ view: fv_economies {
 
   measure: Total_GDP_percapita{
     type: sum
-    value_format: "usd"
+    value_format_name: usd_0
     sql: ${gdp_percapita} ;;
   }
 }
