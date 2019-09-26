@@ -24,12 +24,14 @@ explore: fv_countries {
   }
 
   join: fv_economies {
+    view_label: "Countries & Economies"
     type: left_outer
     relationship: one_to_one
     sql_on: ${fv_countries.code} = ${fv_economies.code} ;;
         }
 
   join: fv_populations {
+    view_label: "Countries & Populations"
     type: left_outer
     relationship: one_to_one
     sql_on: ${fv_countries.code} = ${fv_populations.country_code} ;;
