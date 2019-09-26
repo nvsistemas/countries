@@ -15,16 +15,20 @@ explore: fv_countries {
 
   join: fv_economies {
     type: left_outer
-    sql_on: ${fv_countries.code} = ${fv_economies.code} ;;
     relationship: one_to_one
-    }
+    sql_on: ${fv_countries.code} = ${fv_economies.code} ;;
+        }
+
+  join: fv_populations {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${fv_countries.code} = ${fv_populations.country_code} ;;
+  }
 
 }
 
-# explore: fv_economies {}
+
 
 # explore: fv_economies2010 {}
 
 # explore: fv_economies2015 {}
-
-# explore: fv_populations {}

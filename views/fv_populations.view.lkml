@@ -1,12 +1,15 @@
 view: fv_populations {
+  label: "Populations Data"
   sql_table_name: fivetran_panoply_csv.fv_populations ;;
 
   dimension: _file {
+    hidden: yes
     type: string
     sql: ${TABLE}._file ;;
   }
 
   dimension_group: _fivetran_synced {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -21,11 +24,13 @@ view: fv_populations {
   }
 
   dimension: _line {
+    hidden: yes
     type: number
     sql: ${TABLE}._line ;;
   }
 
   dimension: country_code {
+    hidden: yes
     type: string
     sql: ${TABLE}.country_code ;;
   }
@@ -41,6 +46,7 @@ view: fv_populations {
   }
 
   dimension: pop_id {
+    hidden: yes
     type: number
     sql: ${TABLE}.pop_id ;;
   }
@@ -59,4 +65,11 @@ view: fv_populations {
     type: count
     drill_fields: []
   }
+
+  measure: Total_Population{
+    type: sum
+    sql: ${size} ;;
+  }
+
+
 }
