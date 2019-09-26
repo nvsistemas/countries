@@ -98,7 +98,7 @@ view: fv_countries {
     sql: ${TABLE}.surface_area ;;
   }
 
-  measure: count {
+  measure: quantidade {
     type: count
     drill_fields: [country_name]
   }
