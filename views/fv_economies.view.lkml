@@ -3,11 +3,13 @@ view: fv_economies {
   sql_table_name: fivetran_panoply_csv.fv_economies ;;
 
   dimension: _file {
+    hidden: yes
     type: string
     sql: ${TABLE}._file ;;
   }
 
   dimension_group: _fivetran_synced {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -22,16 +24,19 @@ view: fv_economies {
   }
 
   dimension: _line {
+    hidden: yes
     type: number
     sql: ${TABLE}._line ;;
   }
 
   dimension: code {
+    hidden: yes
     type: string
     sql: ${TABLE}.code ;;
   }
 
   dimension: econ_id {
+    hidden: yes
     type: number
     sql: ${TABLE}.econ_id ;;
   }
